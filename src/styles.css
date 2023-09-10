@@ -1,0 +1,59 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Import jQuery UI CSS */
+@import "~jquery-ui/themes/base/all.css";
+
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-button {
+    border-bottom: 4px solid #3D5F4C;
+    color: #CFE9D0;
+}
+
+.tab-button.active {
+    border-bottom: 4px solid #fff;
+    color: white;
+}
+
+
+#slider-range {
+    width: 100%;
+    margin: auto;
+}
+
+.ui-slider {
+    position: relative;
+    text-align: left;
+    background: #F3F4F6;
+    height: 7px;
+    /* Tailwind gray-200 */
+}
+
+.ui-slider .ui-slider-handle {
+    position: absolute;
+    z-index: 2;
+    width: 1.2rem;
+    height: 1.2rem;
+    cursor: pointer;
+    background: #55B253;
+    border-radius: 50%;
+    /* Tailwind blue-500 */
+}
+
+.ui-slider .ui-slider-range {
+    position: absolute;
+    z-index: 1;
+    height: 7px;
+    cursor: pointer;
+    background: #55B253;
+    /* Tailwind blue-200 */
+}
