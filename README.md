@@ -1,6 +1,6 @@
-# ChromeX
+# SLAE
 
-ChromeX is a base template for building Chrome Extensions using Tailwind CSS, Webpack, and jQuery.
+Chrome Extension
 
 ## Table of Contents
 
@@ -19,8 +19,8 @@ ChromeX is a base template for building Chrome Extensions using Tailwind CSS, We
 Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/anuragdeepxon/chromex.git
-cd chromex
+git clone https://github.com/anuragdeepxon/slae.git
+cd slae
 ```
 
 ## Prerequisites
@@ -68,7 +68,7 @@ This will create optimized files in the `dist` directory.
 3. Click on "Load Unpacked."
 4. Navigate to the `dist` directory of this project and click "Select."
 
-You should now see the Chromex extension icon in your Chrome toolbar.
+You should now see the SLAE extension icon in your Chrome toolbar.
 
 ## Contributing
 
