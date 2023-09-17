@@ -9,6 +9,42 @@ $(document).ready(function () {
   });
 });
 
+
+$(document).ready(function () {
+
+  function validateUrl(url) {
+    // If the URL starts with `http://` or `https://`, then it is a valid URL.
+    if (url.startsWith("http://") || url.startsWith("https://")) {
+      return true;
+    }
+
+    // If the URL does not start with a protocol, then we need to check to see if it is a valid domain name.
+    try {
+      new URL(url);
+      return true;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  $('#urlInputSubmit').click(function () {
+    let inputValue = $('#urlInput').val();
+
+    // Validate the URL
+    if (!validateUrl(inputValue)) {
+      alert("Invalid URL!");
+      return;
+    }
+
+    // Open the URL in the current tab
+    chrome.tabs.update({
+      url: inputValue,
+      active: true
+    });
+
+  });
+});
+
 $(document).ready(function () {
   // Show the first tab by default
   $('#tab1').addClass('active');

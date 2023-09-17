@@ -5,6 +5,39 @@
 /* Import jQuery UI CSS */
 @import "~jquery-ui/themes/base/all.css";
 
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .border-input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #849F8F;
+    outline: none;
+    padding: 8px;
+    color: #849F8F;
+    flex: 1;
+  }
+  
+  .submit-btn {
+    background: #849F8F;
+    padding: 5px;
+    border: 1px solid #849F8F;
+    border-radius: 50%;
+    color: #3D5F4C;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  /* Add Font Awesome Check Icon */
+  .fas.fa-check {
+    font-size: 20px;
+  }
+  
+
 
 .tab-content {
     display: none;

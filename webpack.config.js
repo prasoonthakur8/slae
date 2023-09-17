@@ -22,12 +22,15 @@ module.exports = {
         },
         compress: true,
         port: 8080,
+        watchFiles: path.join(__dirname, 'dist', '**'),
+        hot: true,
         historyApiFallback: {
             rewrites: [
                 { from: /^\/$/, to: '/popup.html' },
             ]
         },
     },
+
     module: {
         rules: [
             {
