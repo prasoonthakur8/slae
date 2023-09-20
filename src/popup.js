@@ -37,11 +37,20 @@ $(document).ready(function () {
     }
 
     // Open the URL in the current tab
-    chrome.tabs.update({
-      url: inputValue,
-      active: true
-    });
+    // chrome.tabs.update({
+    //   url: inputValue,
+    //   active: true
+    // });
 
+
+    // Open the URL in the current tab and get the tab ID
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      const currentTab = tabs[0];
+      chrome.tabs.update(currentTab.id, { url: inputValue }, function (updatedTab) {
+        // Send the tab ID to the background script
+        chrome.runtime.sendMessage({ type: "startTracking", tabId: updatedTab.id });
+      });
+    });
   });
 });
 
