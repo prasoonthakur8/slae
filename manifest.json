@@ -9,8 +9,11 @@
     "default_popup": "popup.html"
   },
   "permissions": [
+    "scripting",
     "webRequest",
-    "activeTab"
+    "activeTab",
+    "webRequestBlocking",
+    "<all_urls>"
   ],
   "host_permissions": [
     "<all_urls>"

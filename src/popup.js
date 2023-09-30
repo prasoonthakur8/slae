@@ -10,6 +10,29 @@ $(document).ready(function () {
 });
 
 
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === "updateCO2Emissions") {
+    let roundedEmissions = parseFloat(message.totalEmissions).toFixed(4);
+    document.getElementById('totalEmissions').innerText = `${roundedEmissions}mg`;
+  }
+});
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === "updateTotalDataWeight") {
+    let roundedDataWeight = parseFloat(message.totalDataWeight).toFixed(2);
+    document.getElementById('totalDataWeight').innerText = `${roundedDataWeight}`;
+  }
+});
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.type === "updateDuration") {
+    let roundedDuration = parseFloat(message.duration).toFixed(2);
+    document.getElementById('duration').innerText = `${roundedDuration}`;
+  }
+});
+
+
+
 $(document).ready(function () {
 
   function validateUrl(url) {
@@ -44,11 +67,19 @@ $(document).ready(function () {
 
 
     // Open the URL in the current tab and get the tab ID
-    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.query({
+      active: true,
+      currentWindow: true
+    }, function (tabs) {
       const currentTab = tabs[0];
-      chrome.tabs.update(currentTab.id, { url: inputValue }, function (updatedTab) {
+      chrome.tabs.update(currentTab.id, {
+        url: inputValue
+      }, function (updatedTab) {
         // Send the tab ID to the background script
-        chrome.runtime.sendMessage({ type: "startTracking", tabId: updatedTab.id });
+        chrome.runtime.sendMessage({
+          type: "startTracking",
+          tabId: updatedTab.id
+        });
       });
     });
   });
@@ -80,5 +111,18 @@ $(function () {
     slide: function (event, ui) {
       // Do something when sliding
     }
+  });
+});
+
+// Content Script
+document.getElementById('switchOffDataweightButton').addEventListener('click', () => {
+  chrome.runtime.sendMessage({
+    type: 'switchOffDataweight'
+  });
+});
+
+document.getElementById('switchOffDurationButton').addEventListener('click', () => {
+  chrome.runtime.sendMessage({
+    type: 'switchOffDuration'
   });
 });

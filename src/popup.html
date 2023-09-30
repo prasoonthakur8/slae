@@ -7,8 +7,7 @@
 
 </head>
 
-<body
-  class="bg-gradient-to-b from-[#042513] to-[#072514] text-white flex flex-col lg:w-[514px]
+<body class="bg-gradient-to-b from-[#042513] to-[#072514] text-white flex flex-col lg:w-[514px]
   md:w-[300px] w-[320px] min-h-screen h-full min-w-full">
 
   <!-- Navbar -->
@@ -35,9 +34,11 @@
 
   <!-- Tabs -->
   <div class="flex justify-center mt-0 space-x-0 w-full">
-    <button class="tab-button lg:text-2xl text-md text active w-1/2 py-2 text-white  bg-[#3D5F4C] " data-tab="tab1">Green
+    <button class="tab-button lg:text-2xl text-md text active w-1/2 py-2 text-white  bg-[#3D5F4C] "
+      data-tab="tab1">Green
       Browsing</button>
-    <button class="tab-button lg:text-2x text-md l w-1/2 py-2 text-white bg-[#3D5F4C] " data-tab="tab2">All Offers</button>
+    <button class="tab-button lg:text-2x text-md l w-1/2 py-2 text-white bg-[#3D5F4C] " data-tab="tab2">All
+      Offers</button>
   </div>
 
 
@@ -80,12 +81,36 @@
       </button>
     </div>
 
-    <!-- Content -->
-    <div class="flex-1 flex items-center justify-center p-4 mt-10">
-      <button id="sayHiButton"
-        class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Say
-        Hi</button>
+    <div class="mb-2 text-lg mt-2 text-white">
+      Details
     </div>
+
+    <div class="rounded-lg shadow-md">
+      <div class="mb-4 mt-4 p-2 bg-[#3D5F4C] rounded-md">
+        <p class="text-sm font-normal text-slate-100">Data Weight: <span id="totalDataWeight"
+            class="font-normal text-slate-100">0</span> bits</p>
+      </div>
+      <div class="mb-4 mt-4 p-2 bg-[#3D5F4C] rounded-md">
+        <p class="text-sm font-normal text-slate-100">Duration: <span id="duration"
+            class="font-normal text-slate-100">0</span> seconds</p>
+      </div>
+      <div class="mb-4 mt-4 p-2 bg-[#3D5F4C] rounded-md">
+        <p class="text-sm font-normal text-slate-100">Total Carbon Emission so far: <span id="totalEmissions"
+            class="font-normal text-slate-100">0</span></p>
+      </div>
+    </div>
+
+
+    <!-- Content -->
+
+    <div class="flex-1 flex items-center justify-center p-4 mt-10">
+      <button id="switchOffDataweightButton" class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Switch off Dataweight</button>
+    </div>
+
+    <div class="flex-1 flex items-center justify-center p-4">
+      <button id="switchOffDurationButton" class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Switch off Duration</button>
+    </div>
+
 
   </div>
 
