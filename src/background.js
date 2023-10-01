@@ -7,6 +7,8 @@ chrome.runtime.onInstalled.addListener(() => {
     // Rest of your code
 });
 
+
+
 // Background Script
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'switchOffDataweight') {

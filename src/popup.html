@@ -4,6 +4,7 @@
 <head>
   <title>SLAE</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://feed.linkmydeals.com">
 
 </head>
 
@@ -104,29 +105,31 @@
     <!-- Content -->
 
     <div class="flex-1 flex items-center justify-center p-4 mt-10">
-      <button id="switchOffDataweightButton" class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Switch off Dataweight</button>
+      <button id="switchOffDataweightButton"
+        class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Switch
+        off Dataweight</button>
     </div>
 
     <div class="flex-1 flex items-center justify-center p-4">
-      <button id="switchOffDurationButton" class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Switch off Duration</button>
+      <button id="switchOffDurationButton"
+        class="bg-gradient-to-r from-[#004022] to-[#005032] p-1 flex-1 max-w-xs text-center text-[15px] rounded-md hover:from-[#005032] hover:to-[#006042] transition ease-in-out duration-300 shadow-2xl">Switch
+        off Duration</button>
     </div>
 
 
   </div>
 
-
-  <div id="tab2" class="tab-content mt-5 px-8 rounded-lg  shadow-lg">
+  <div id="tab2" class="tab-content mt-5 px-2 rounded-lg shadow-lg">
     <h1 class="text-lg font-semibold mb-2">Content</h1>
-    <p class="text-sm">Information</p>
+    <div id="productGallery" class="product-gallery"></div>
 
+    <span id="count" class="my-2 ml-3">Showing 0-0 of 0</span>
 
-    <!-- Content -->
-    <div class="flex-1 flex items-center justify-center p-4 h-80">
-
+    <div id="controls">
+      <button id="showLess" class="mr-1">Show Less</button>
+      <button id="showMore">Show More</button>
     </div>
   </div>
-
-
 
 
   <!-- Footer -->

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "shx cp manifest.json dist && webpack serve & webpack --mode production --watch",
-    "build": "shx cp manifest.json dist && webpack --mode production",
+    "build": "shx cp manifest.json dist && shx cp src/api_response.json dist && webpack --mode production",
     "watch": "webpack --watch"
   },
   "devDependencies": {
