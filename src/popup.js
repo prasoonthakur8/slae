@@ -18,6 +18,7 @@ var offers = [];
 function displayOffers(start, end) {
   var html = '';
   for (var i = start; i < end && i < offers.length; i++) {
+    
     var imageUrl = offers[i].image;
     if (!imageUrl) {
       imageUrl = 'images/offer_earth.png';
@@ -30,13 +31,37 @@ function displayOffers(start, end) {
                 ${imageElement}
                 <div class="product-info flex justify-between items-center mt-2">
                   <a class="visit-link text-blue-500" href="${offers[i].merchant_homepage}" target="_blank">Visit</a>
-                  <button class="favorite-icon text-orange-500">&#9733;</button>
                 </div>
                 <div class="product-title">${offers[i].title}</div>
+                <div class="product-desc">${offers[i].categories}</div>
               </div>
             </div>`;
   }
   $('#productGallery').html(html);
+}
+
+// Function to process offers
+function processOffers(data) {
+  console.log(data);
+  // Check if result is true and offers array exists
+  if (data.result && Array.isArray(data.offers)) {
+    offers = data.offers.map(function (offer) {
+      // Here, I'm assuming your offer objects have 'image', 'title', 'offer_text', and 'merchant_homepage' properties.
+      // Modify this as needed based on your actual data structure.
+      return {
+        image: offer.image_url, // Replace with actual image URL property
+        title: offer.title,
+        offer_text: offer.offer_text,
+        merchant_homepage: offer.merchant_homepage,
+        categories: offer.categories, 
+        offer_value: offer.offer_value
+      };
+    });
+
+    // Reset currentStart and initially display first chunk of offers
+    currentStart = 0;
+    displayOffers(currentStart, currentStart + chunkSize);
+  }
 }
 
 
@@ -100,26 +125,7 @@ async function fetchOffers() {
 }
 
 
-// Function to process offers
-function processOffers(data) {
-  // Check if result is true and offers array exists
-  if (data.result && Array.isArray(data.offers)) {
-    offers = data.offers.map(function (offer) {
-      // Here, I'm assuming your offer objects have 'image', 'title', 'offer_text', and 'merchant_homepage' properties.
-      // Modify this as needed based on your actual data structure.
-      return {
-        image: offer.image_url, // Replace with actual image URL property
-        title: offer.title,
-        offer_text: offer.offer_text,
-        merchant_homepage: offer.merchant_homepage
-      };
-    });
 
-    // Reset currentStart and initially display first chunk of offers
-    currentStart = 0;
-    displayOffers(currentStart, currentStart + chunkSize);
-  }
-}
 
 // Function to call API
 function callAPI() {
