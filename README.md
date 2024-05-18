@@ -19,7 +19,7 @@ Chrome Extension
 Clone the repository to your local machine.
 
 ```bash
-git clone https://github.com/anuragdeepxon/slae.git
+git clone https://github.com/prasoonthakur8/slae.git
 cd slae
 ```
 
@@ -77,10 +77,4 @@ Contributions are welcome! Please read the [contributing guidelines](CONTRIBUTIN
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
-
-## Author
-
-- Anurag Deep
-  - [Website](https://anuragdeep.com)
-  - [LinkedIn](https://www.linkedin.com/in/anuragdeepxon/)
-
+ 
